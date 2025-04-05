@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paint Mixing AI</title>
+</head>
+<body>
+    <h1>Upload an image</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Mix Paints</button>
+    </form>
+
+    {% if uploaded %}
+        <h2>Suggested Mix</h2>
+        <ul>
+            {% for paint in suggested_mix %}
+                <li>{{ paint }}</li>
+            {% endfor %}
+        </ul>
+        <h2>Final Color: {{ final_color }}</h2>
+    {% endif %}
+</body>
+</html>
